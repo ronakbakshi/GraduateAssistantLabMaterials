@@ -1,0 +1,58 @@
+package pkgenum;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Pushkar Kumar
+ */
+enum EnumDirections {
+
+ EAST, WEST, SOUTH, NORTH 
+    
+}
+
+public class Direction{
+    public void directionToGo(EnumDirections d){
+        if(d == EnumDirections.EAST){
+            System.out.println("Go towards East for 30 miles to reach your destination");
+        }
+        else if(d == EnumDirections.WEST){
+            System.out.println("Go towards West for 60 miles to reach your destination");
+        }
+        else if(d == EnumDirections.SOUTH){
+            System.out.println("Go towards South for 100 miles to reach your destination");
+        }
+        else{
+            System.out.println("Go towards North for 3 miles to reach your destination");
+        }
+    }
+}
+
+
+
+
+class Driver{
+     public static void main(String[] args) {
+        // TODO code application logic here
+         
+         Scanner sc = new Scanner(System.in);
+         System.out.println("Enter the direction you want to travel:");
+         String enteredDirection = sc.nextLine();
+         Direction d = new Direction();
+         if(enteredDirection.equals("east")||enteredDirection.equals("East")||enteredDirection.equals("EAST")){
+             d.directionToGo(EnumDirections.EAST);
+         }
+         else if(enteredDirection.equals("west")||enteredDirection.equals("West")||enteredDirection.equals("WEST")){
+             d.directionToGo(EnumDirections.WEST);
+         }
+         else if(enteredDirection.equals("south")||enteredDirection.equals("South")||enteredDirection.equals("SOUTH")){
+             d.directionToGo(EnumDirections.SOUTH);
+         }
+         else{
+             d.directionToGo(EnumDirections.NORTH);
+         }
+         
+
+    }
+}
